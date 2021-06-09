@@ -1,12 +1,13 @@
 import Vue from 'vue'
-import App from './App.vue'
+import ApplicationLayout from './components/ApplicationLayout.vue'
 import router from './router'
 import store from './store'
+import "tailwindcss/tailwind.css"
 
 Vue.config.productionTip = false
 
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(ApplicationLayout)
 }).$mount('#app')

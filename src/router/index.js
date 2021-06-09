@@ -1,22 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import A from '../components/Mesures/A.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/a',
+    name: 'All Mesures',
+    component: A
   }
 ]
 
@@ -27,3 +19,7 @@ const router = new VueRouter({
 })
 
 export default router
+export const server = {addr: "192.168.137.11:8080", protocol: 'http'}
+export function url(uri) {
+  return `${server.protocol}://${server.addr}/${uri}`;
+}
